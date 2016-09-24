@@ -1,0 +1,59 @@
+# depslib dependency file v1.0
+1477149789 source:c:\users\elmat\documents\utn\git\tp-s-en-progreso\tp3\tp3\lib.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"lib.h"
+
+1477148822 
+
+1477117777 c:\users\elmat\documents\utn\git\tp-s-en-progreso\tp3\tp3\lib.h
+
+1477148822 source:c:\users\elmat\documents\utn\git\tp-s-en-progreso\tp3\tp3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+
+1477613047 source:/home/matias/Git/Tp-s-en-progreso/Tp3/main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+
+1477610923 /home/matias/Git/Tp-s-en-progreso/Tp3/lib.h
+
+1477613099 source:/home/matias/Git/Tp-s-en-progreso/Tp3/lib.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"lib.h"
+
+1478914388 source:/home/matias/Documents/UTN/Git/Tp-s-en-progreso/Tp3/main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+
+1478914088 /home/matias/Documents/UTN/Git/Tp-s-en-progreso/Tp3/lib.h
+
+1478914912 source:/home/matias/Documents/UTN/Git/Tp-s-en-progreso/Tp3/lib.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"lib.h"
+
+1478927857 source:c:\users\elmat\documents\utn\git\tp-s-en-progreso\tp3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+
+1478926410 c:\users\elmat\documents\utn\git\tp-s-en-progreso\tp3\lib.h
+
+1478927484 source:c:\users\elmat\documents\utn\git\tp-s-en-progreso\tp3\lib.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"lib.h"
+

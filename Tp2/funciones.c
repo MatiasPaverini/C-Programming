@@ -46,7 +46,7 @@ void Cargar_Nombre()
                         nombre[lower_case] = tolower(nombre[lower_case]);
                     }
                     i = getc(stdin);
-                    //nombre[0] = toupper(nombre[0]);
+                    nombre[0] = toupper(nombre[0]);
                     strcat(nombre_completo, nombre);
                     strcat(nombre_completo, " ");
                     flag = 1;
