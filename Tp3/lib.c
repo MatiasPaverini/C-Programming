@@ -91,6 +91,7 @@ int Buscar_Posicion(Emovie *pelicula)
         }
         pelicula = aux;
         free(aux);
+        Inicializar_Estado(pelicula);
         flag_realloc = 1;
         //printf("No hay posiciones");
         //exit(1);

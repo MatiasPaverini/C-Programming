@@ -21,10 +21,19 @@ typedef struct
 int Cargar_opcion(int opc);
 
 /**
- *  Inicializa el estado de todas las posiciones
+ *  Inicializa el estado de todas las posiciones en 0
+ *  @param  pos la posicion del array en el bucle
 */
 void Inicializar_Estado(Emovie *pelicula);
 
+/**
+ *  Busca una posicion libre (estado 0) en el array para una cargar nueva, en caso de no haber posicion
+ hace un realloc para obtener nuevas
+ *  @param aux estructura auxiliar para crear redimensionar la lista de peliculas originales
+ *  @param pos posicion del array dentro del bucle
+ *  @param flag_realloc flag de estado, si pasa por el realloc lo modifica para así repetir la busqueda de espacio
+ *  @return devuelve la posicion disponible dentro del array
+*/
 int Buscar_Posicion(Emovie *pelicula);
 
 /**
@@ -45,19 +54,42 @@ int BorrarPelicula();
  *  Genera un archivo html a partir de las peliculas cargadas en el archivo binario.
  *  @param lista la lista de peliculas a ser agregadas en el archivo.
  *  @param nombre el nombre para el archivo.
+ *  @return devuelve 0 en caso de no haber podido borrar la pelicula o 1 en caso de haberlo logrado
  */
 void generarPagina();
 
+/**
+ *  Carga la descripcion de la pelicula
+*/
 void Cargar_Pelicula_Descripcion(Emovie *pelicula, int posicion);
 
+/**
+ * Carga la duracion de la pelicula
+*/
 void Cargar_Pelicula_duracion(Emovie *pelicula, int posicion);
 
+/**
+ * Carga el genero de la pelicula
+*/
 void Cargar_Pelicula_genero(Emovie *pelicula, int posicion);
 
+/**
+ * Carga el nombre de la pelicula
+*/
 void Cargar_Pelicula_Nombre(Emovie *pelicula, int posicion);
 
+/**
+ *  carga el puntaje de la pelicula
+*/
 void Cargar_puntaje_pelicula(Emovie *pelicula, int posicion);
 
+/**
+ *  Modifica los datos de la pelicula seleccionada por id
+ @param id carga por el id de la pelicula seleccionada
+ @param resultado flag de estado, se modifica en caso de que la operacion haya sido correcta
+ @param posicion lugar de memoria donde se encuentra actualmente el array de estructuras
+ @return devuelve 0 en caso de no haber podido modificar la pelicula o 1 en caso de haberlo hecho exitosamente
+*/
 int Modificar_Pelicula(Emovie *pelicula);
 
 
