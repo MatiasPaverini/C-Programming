@@ -57,10 +57,17 @@
 	<string.h>
 	"lib.h"
 
-1478927857 source:c:\users\elmat\documents\utn\git\tp_laboratorio_1\tp3\main.c
+1478932765 source:c:\users\elmat\documents\utn\git\tp_laboratorio_1\tp3\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lib.h"
 
-1478930428 c:\users\elmat\documents\utn\git\tp_laboratorio_1\tp3\lib.h
+1478937212 c:\users\elmat\documents\utn\git\tp_laboratorio_1\tp3\lib.h
+
+1478937652 source:c:\users\elmat\documents\utn\git\tp_laboratorio_1\tp3\lib.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"lib.h"
 

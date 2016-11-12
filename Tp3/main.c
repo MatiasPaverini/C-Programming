@@ -32,10 +32,10 @@ int main()
                 BorrarPelicula(lista);
                 break;
             case 3:
-                Modificar_Pelicula(lista);
+                generarPagina(lista);
                 break;
             case 4:
-
+                Modificar_Pelicula(lista);
                break;
             case 5:
                 printf("Desea cerrar el menu? [s/n]: ");
@@ -58,7 +58,7 @@ int main()
                 }while(seguir != 's' || seguir != 'n');
                 break;
             default:
-              printf("ingrese una opcion correcta (opciones de 1 a 4).\n");
+              printf("ingrese una opcion correcta (opciones de 1 a 5).\n");
               break;
         }
     }

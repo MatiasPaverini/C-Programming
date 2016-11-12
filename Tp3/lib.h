@@ -48,15 +48,12 @@ void agregarPelicula(Emovie *pelicula);
  *  @param movie la estructura a ser eliminada al archivo
  *  @return retorna 1 o 0 de acuerdo a si pudo eliminar la pelicula o no
  */
-int BorrarPelicula();
+int BorrarPelicula(Emovie *pelicula);
 
 /**
  *  Genera un archivo html a partir de las peliculas cargadas en el archivo binario.
- *  @param lista la lista de peliculas a ser agregadas en el archivo.
- *  @param nombre el nombre para el archivo.
- *  @return devuelve 0 en caso de no haber podido borrar la pelicula o 1 en caso de haberlo logrado
  */
-void generarPagina();
+void generarPagina(Emovie *pelicula);
 
 /**
  *  Carga la descripcion de la pelicula
@@ -82,6 +79,8 @@ void Cargar_Pelicula_Nombre(Emovie *pelicula, int posicion);
  *  carga el puntaje de la pelicula
 */
 void Cargar_puntaje_pelicula(Emovie *pelicula, int posicion);
+
+void Cargar_Link(Emovie *pelicula, int posicion);
 
 /**
  *  Modifica los datos de la pelicula seleccionada por id
