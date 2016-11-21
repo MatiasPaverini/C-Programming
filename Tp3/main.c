@@ -2,9 +2,10 @@
 #include <stdlib.h>
 #include "lib.h"
 #define SIZE 10
-Emovie *lista;
+
 int main()
 {
+  Emovie *lista;
   int opcion = 0;
   char seguir = 'n';
   lista = (Emovie*) malloc(sizeof(Emovie)*SIZE);

@@ -61,6 +61,7 @@ int Buscar_Posicion(Emovie *pelicula)
 {
   Emovie *aux;
   int pos, flag_realloc = -1;
+   aux = (Emovie*) realloc(pelicula, sizeof(Emovie)*SIZE);
   do
   {
     for (pos = 0 ; pos < tamanio ; pos ++)
@@ -69,7 +70,7 @@ int Buscar_Posicion(Emovie *pelicula)
       {
         break;
       }
-      else
+      /*else
       {
         tamanio = SIZE + tamanio;
         aux = (Emovie*) realloc(pelicula, sizeof(Emovie)*tamanio);
@@ -83,7 +84,7 @@ int Buscar_Posicion(Emovie *pelicula)
         flag_realloc = 1;
         //printf("No hay posiciones");
         //exit(1);
-      }
+      }*/
     }
 	}while(flag_realloc != -1);
 	return pos;
