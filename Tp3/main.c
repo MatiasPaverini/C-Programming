@@ -5,10 +5,10 @@
 
 int main()
 {
-  Emovie *lista;
+  Emovie lista[SIZE];
   int opcion = 0;
   char seguir = 'n';
-  lista = (Emovie*) malloc(sizeof(Emovie)*SIZE);
+ // lista = (Emovie*) malloc(sizeof(Emovie)*SIZE);
   if(lista == NULL)
   {
     exit(-1);

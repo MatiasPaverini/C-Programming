@@ -10,7 +10,7 @@ int tamanio = 10;
 int Buscar_posicion_por_id(Emovie *pelicula)
 {
   int id, iteracion;
-  int *resultado = NULL;
+  int resultado = NULL;
 
   printf("Ingrese el numero de la pelicula.\n");
   scanf("%d", &id);
@@ -19,7 +19,7 @@ int Buscar_posicion_por_id(Emovie *pelicula)
   {
     if (id == (pelicula + iteracion)->id)
     {
-      *resultado = (pelicula + iteracion);
+      //resultado = pelicula[iteracion];
       printf("exito");
     }
     else
@@ -28,7 +28,7 @@ int Buscar_posicion_por_id(Emovie *pelicula)
       exit(1);
     }
   }
-  return *resultado;
+  return resultado;
 }
 
 int Cargar_opcion(int opc)
@@ -36,6 +36,7 @@ int Cargar_opcion(int opc)
   char opci;
   do
   {
+    getchar();
     setbuf(stdin, NULL);
     scanf(" %c", &opci);
     //opci = (char) opc;
@@ -59,9 +60,9 @@ void Inicializar_Estado(Emovie *pelicula)
 
 int Buscar_Posicion(Emovie *pelicula)
 {
-  Emovie *aux;
+ // Emovie *aux;
   int pos, flag_realloc = -1;
-   aux = (Emovie*) realloc(pelicula, sizeof(Emovie)*SIZE);
+  //aux = (Emovie*) realloc(pelicula, sizeof(Emovie)*SIZE);
   do
   {
     for (pos = 0 ; pos < tamanio ; pos ++)
@@ -72,19 +73,25 @@ int Buscar_Posicion(Emovie *pelicula)
       }
       /*else
       {
-        tamanio = SIZE + tamanio;
-        aux = (Emovie*) realloc(pelicula, sizeof(Emovie)*tamanio);
+        if (pos == tamanio)
+        {
+          tamanio = SIZE + tamanio;
+          aux = (Emovie*) realloc(pelicula, sizeof(Emovie)*tamanio);
+        }
+      }
         if (aux == NULL)
         {
+          printf("No se puede conseguir mas espacio.");
           exit (2);
         }
         pelicula = aux;
         free(aux);
         Inicializar_Estado(pelicula);
         flag_realloc = 1;
+        break;
         //printf("No hay posiciones");
         //exit(1);
-      }*/
+      //}*/
     }
 	}while(flag_realloc != -1);
 	return pos;
@@ -109,53 +116,62 @@ void agregarPelicula(Emovie *pelicula)
 
 int BorrarPelicula(Emovie *pelicula)
 {
-  int posicion;
+  int posicion, id, resultado = 0;
+    printf("Ingrese el id de la pelicula que busca.\n");
+    setbuf(stdin, NULL);
+    scanf("%d", &id);
   for (posicion = 0 ; posicion < tamanio ; posicion++)
   {
-    posicion = Buscar_posicion_por_id(pelicula);
-    (pelicula + posicion)->estado = 0;
+    //posicion = Buscar_posicion_por_id(pelicula);
+    if (id == pelicula[posicion].id)
+    {
+      (pelicula + posicion)->estado = 0;
+      resultado = 1;
+      break;
+    }
   }
-  return 0;
+  return resultado;
 }
 
 void generarPagina(Emovie *pelicula)
 {
-  int pos = 0;
-  char *buffer = NULL, *dur = NULL, *punt = NULL;
-  buffer = (char*) malloc(sizeof(char)*2000);
-  punt = (char*) malloc (sizeof(char)*5);
-  dur = (char*) malloc(sizeof(char)*5);
-  if (buffer == NULL || punt == NULL || dur == NULL)
-  {
-    printf("no hay espacio en memoria");
-    exit(5);
-  }
-  FILE *web = NULL;
-  if ((web = fopen("index.html", "ab+")) == NULL)
-  {
-    printf("El archivo no puede abrirse");
-    exit(4);
-  }
-  for (pos = 0 ; pos < tamanio ; pos++)
-  {
-    sprintf(punt, "%d", (pelicula+pos)->puntaje);
-    sprintf(dur, "%d", (pelicula+pos)->duracion);
-    strcat(buffer, "<article class='col-md-4 article-intro'> <a href='#'> <img class='img-responsive img-rounded' src='");
-    strcat(buffer, (pelicula+pos)->linkImagen);
-    strcat(buffer, "'alt=''></a><h3> <a href='#'>");
-    strcat(buffer,(pelicula+pos)->titulo);
-    strcat(buffer,"</a></h3><ul><li>Género: ");
-    strcat(buffer, (pelicula+pos)->genero);
-    strcat(buffer,"</li><li>Puntaje: ");
-    strcat(buffer, punt);
-    strcat(buffer,"</li><li>Duración: ");
-    strcat(buffer, dur);
-    strcat(buffer, "</li></ul> <p>");
-    strcat(buffer, (pelicula+pos)->descripcion);
-    strcat(buffer,"</p></article>");
-    fwrite(buffer, sizeof(char), 1, web);
-  }
-  fclose(web);
+  FILE *pArchPelis = NULL;
+  FILE *pArchHTML = NULL;
+  char nombre[2000];
+  pArchPelis = fopen("Pelis.bin", "wb+");
+  if(pArchPelis == NULL)
+    {
+      printf("error");
+      exit(4);
+    }
+  pArchHTML = fopen(nombre,"w+");
+  if(pArchPelis == NULL)
+    {
+      printf("error");
+      exit(5);
+    }
+  while(!feof(pArchPelis))
+    {
+      fflush(pArchPelis);
+      fflush(pArchHTML);
+      fscanf(pArchPelis,"%[^,],%[^,],%[^,],%d,%d,%[^,]\n", pelicula->titulo, pelicula->genero, pelicula->descripcion, pelicula->duracion, pelicula->puntaje,pelicula->linkImagen);
+      printf("\n%s\n%s\n%s\n%d\n%d\n%s\n\n", pelicula->titulo, pelicula->genero, pelicula->descripcion, pelicula->duracion, pelicula->puntaje, pelicula->linkImagen);
+      fprintf(pArchHTML,"<article class='col-md-4 article-intro'>\n");
+      fprintf(pArchHTML,"\t<a href='#'>\n");
+      fprintf(pArchHTML,"\t\t<img class=''alt='%s'\n>", pelicula->linkImagen);
+      fprintf(pArchHTML,"\t</a>\n");
+      fprintf(pArchHTML,"\t<h3>\n");
+      fprintf(pArchHTML,"\t\t<a href='#'>%s</a>\n", pelicula->titulo);
+      fprintf(pArchHTML,"\t</h3>\n");
+      fprintf(pArchHTML,"\t<ul>");
+      fprintf(pArchHTML,"\t\t<li>Género:%s</li>\n", pelicula->genero);
+      fprintf(pArchHTML,"\t<li>Puntaje:%d</li>\n", pelicula->puntaje);
+      fprintf(pArchHTML,"\t<li>Duración:%d</li>\n", pelicula->duracion);
+      fprintf(pArchHTML,"\t</ul>\n");
+      fprintf(pArchHTML,"\t<p>%s</p>\n", pelicula->descripcion);
+    }
+  fclose(pArchPelis);
+  fclose(pArchHTML);
 }
 
 void Cargar_Link(Emovie *pelicula, int posicion)
@@ -169,11 +185,11 @@ void Cargar_Link(Emovie *pelicula, int posicion)
 
 void Cargar_Pelicula_Nombre(Emovie *pelicula, int posicion)
 {
-  (pelicula + posicion) -> titulo = (char*)malloc (sizeof(char)*40);
+  (pelicula + posicion) -> titulo = (char*)malloc (sizeof(char)*60);
   printf("Ingrese un titulo.\n");
   setbuf(stdin, NULL);
   getchar();
-  fgets((pelicula + posicion)-> titulo, 20, stdin);
+  fgets((pelicula + posicion)-> titulo, 60, stdin);
 }
 
 void Cargar_Pelicula_genero(Emovie *pelicula, int posicion)
@@ -193,9 +209,9 @@ void Cargar_Pelicula_duracion(Emovie *pelicula, int posicion)
 void Cargar_Pelicula_Descripcion(Emovie *pelicula, int posicion)
 {
   printf("Ingrese la descripcion de la pelicula.\n");
-  (pelicula + posicion) -> descripcion = (char*)malloc(sizeof(char)*200);
+  (pelicula + posicion) -> descripcion = (char*)malloc(sizeof(char)*500);
   setbuf(stdin,NULL);
-  fgets((pelicula + posicion) -> descripcion , 200, stdin);
+  fgets((pelicula + posicion) -> descripcion , 500, stdin);
 }
 
 void Cargar_puntaje_pelicula(Emovie *pelicula, int posicion)
@@ -206,19 +222,31 @@ void Cargar_puntaje_pelicula(Emovie *pelicula, int posicion)
 
 int Modificar_Pelicula(Emovie *pelicula)
  {
-    int resultado=0;
-    int posicion;
-    posicion = Buscar_posicion_por_id(pelicula);
-    if(posicion != -2){
-    Cargar_Pelicula_Nombre(pelicula, posicion);
-    Cargar_Pelicula_genero(pelicula, posicion);
-    Cargar_Pelicula_duracion(pelicula, posicion);
-    Cargar_Pelicula_Descripcion(pelicula, posicion);
-    resultado++;
-    }
-    else
+    int resultado= 0;
+    int posicion, id;
+  //  posicion = Buscar_posicion_por_id(pelicula);
+    printf("Ingrese el id de la pelicula que busca.\n");
+    setbuf(stdin, NULL);
+    scanf("%d", &id);
+    for (posicion = 0 ; posicion < tamanio ; posicion++)
     {
-      printf("Error.");
+      if(id == pelicula[posicion].id && pelicula[posicion].estado == 1)
+      {
+        Cargar_Pelicula_Nombre(pelicula, posicion);
+        Cargar_Pelicula_Descripcion(pelicula, posicion);
+        Cargar_Pelicula_genero(pelicula, posicion);
+        Cargar_Link(pelicula, posicion);
+        Cargar_Pelicula_duracion(pelicula, posicion);
+        Cargar_puntaje_pelicula(pelicula,posicion);
+        resultado++;
+        break;
+      }
+      else
+      {
+        printf("Error.");
+        exit(6);
+      }
     }
+    printf("Se ha modificado la pelicula con exito");
     return resultado;
  }

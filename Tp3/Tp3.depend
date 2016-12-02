@@ -71,3 +71,17 @@
 	<string.h>
 	"lib.h"
 
+1480698700 source:c:\users\matia\documents\utn\tp_laboratorio_1\tp3\lib.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"lib.h"
+
+1480477835 c:\users\matia\documents\utn\tp_laboratorio_1\tp3\lib.h
+
+1480627562 source:c:\users\matia\documents\utn\tp_laboratorio_1\tp3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+
