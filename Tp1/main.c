@@ -4,26 +4,26 @@
 #include "funciones.h"
 int main()
 {
-    float a = 0, b = 0, resultado;
+    float num1 = 0, num2 = 0, resultado;
     int opcion, flag = 0;
-    char seguir = 's';
-     while (seguir == 's')
+    char seguir = 'n';
+     while (seguir != 's')
      {
          if (flag != 0)
          {
              if ( flag == 1 && opcion == 1)
              {
-                 printf("Ingrese un numero para ejecutar una funcion\n1 Ingresar primer operando (A = %f).\n2 Ingresar segundo operando (B).\n3 Sumar.\n4 Restar.\n5 Multiplicar.\n6 Division.\n7 Factoreal.\n8 Hacer todas las operaciones.\n9 Salir.\n", a);
+                 printf("Ingrese un numero para ejecutar una funcion\n1 Ingresar primer operando (A = %f).\n2 Ingresar segundo operando (B).\n3 Sumar.\n4 Restar.\n5 Multiplicar.\n6 Division.\n7 Factoreal.\n8 Hacer todas las operaciones.\n9 Salir.\n", num1);
                  flag++;
              }
                 else if ( flag == 1 && opcion == 2)
              {
-                 printf("Ingrese un numero para ejecutar una funcion\n1 Ingresar primer operando (A) .\n2 Ingresar segundo operando (B = %f).\n3 Sumar.\n4 Restar.\n5 Multiplicar.\n6 Division.\n7 Factoreal.\n8 Hacer todas las operaciones.\n9 Salir.\n", b);
+                 printf("Ingrese un numero para ejecutar una funcion\n1 Ingresar primer operando (A) .\n2 Ingresar segundo operando (B = %f).\n3 Sumar.\n4 Restar.\n5 Multiplicar.\n6 Division.\n7 Factoreal.\n8 Hacer todas las operaciones.\n9 Salir.\n", num2);
                  flag++;
              }
                 else if (flag == 2)
              {
-                 printf("Ingrese un numero para ejecutar una funcion\n1 Ingresar primer operando (A = %f) .\n2 Ingresar segundo operando (B = %f).\n3 Sumar.\n4 Restar.\n5 Multiplicar.\n6 Division.\n7 Factoreal.\n8 Hacer todas las operaciones.\n9 Salir.\n", a, b);
+                 printf("Ingrese un numero para ejecutar una funcion\n1 Ingresar primer operando (A = %f) .\n2 Ingresar segundo operando (B = %f).\n3 Sumar.\n4 Restar.\n5 Multiplicar.\n6 Division.\n7 Factoreal.\n8 Hacer todas las operaciones.\n9 Salir.\n", num1, num2);
              }
          }
          else
@@ -36,49 +36,49 @@ int main()
     	{
         	case 1 :
 				 printf ("Ingrese un numero para el primer operando (A):  \n");
-				a = ingresarNumeros (a);
-				printf("El operando A es: %f\n", a);
+				num1 = ingresarNumeros (num1);
+				printf("El operando A es: %f\n", num1);
          	   break;
         	case 2 :
 				 printf ("Ingrese un numero para el segundo operando (B):  \n");
-				b = ingresarNumeros(b);
-				printf ("El operando B es: %f\n", b);
+				num2 = ingresarNumeros(num2);
+				printf ("El operando B es: %f\n", num2);
             	break;
         	case 3 :
-        	    resultado = sumar (a, b);
+        	    resultado = sumar (num1, num2);
             	if (resultado != 0)
             	{
             		printf("La suma es: %f\n", resultado);
             	}
             	else
             	{
-            		if (a ==0 && b != 0)
+            		if (num1 ==0 && num2 != 0)
             		{
-            		 printf ("No se realizo la suma ya que solo ingreso B = %f.\n", b);
+            		 printf ("No se realizo la suma ya que solo ingreso B = %f.\n", num2);
             		}
-            		else if (a != 0 && b == 0)
+            		else if (num1 != 0 && num2 == 0)
             		{
-            			printf ("No se realizo la suma ya que solo ingreso A = %f.\n", a);
+            			printf ("No se realizo la suma ya que solo ingreso A = %f.\n", num1);
             		}
-            		else if ( a == 0 && b == 0)
+            		else if ( num1 == 0 && num2 == 0)
             		{
             			printf ("No se realizo la suma ya que  no ingreso un valor.\n");
             		}
             	}
            	 break;
         	case 4 :
-            	resultado = restar (a, b);
-            	if (a != 0 && b != 0)
+            	resultado = restar (num1, num2);
+            	if (num1 != 0 && num2 != 0)
                 {
                     printf ("La resta es: %f\n", resultado);
                 }
-                else if (a == 0 && b != 0)
+                else if (num1 == 0 && num2 != 0)
                 {
-                    printf("Usted solo ingreso un operando o 0 en el operando A\nSu resultado es: -%f\n", b);
+                    printf("Usted solo ingreso un operando o 0 en el operando A\nSu resultado es: -%f\n", num2);
                 }
-                else if (a != 0 && b == 0)
+                else if (num1 != 0 && num2 == 0)
                 {
-                    printf("Usted solo ingreso un operando o 0 en el operando B\nSu resultado es: %f\n", a);
+                    printf("Usted solo ingreso un operando o 0 en el operando B\nSu resultado es: %f\n", num1);
                 }
                 else
                 {
@@ -86,16 +86,16 @@ int main()
                 }
             	break;
         	case 5 :
-            	resultado = multiplicar (a, b);
-                if (a != 0 && b != 0)
+            	resultado = multiplicar (num1, num2);
+                if (num1 != 0 && num2 != 0)
                 {
                     printf("La multiplicacion es: %f\n", resultado);
                 }
-            	else if (a == 0 && b != 0)
+            	else if (num1 == 0 && num2 != 0)
                 {
                     printf("Usted solo ingreso un operando o 0 en el operando A\nSu resultado es: 0");
                 }
-                else if (a != 0 && b == 0)
+                else if (num1 != 0 && num2 == 0)
                 {
                     printf("Usted solo ingreso un operando o 0 en el operando B\nSu resultado es: 0");
                 }
@@ -105,16 +105,16 @@ int main()
                 }
             	break;
         	case 6 :
-            	resultado = dividir(a, b);
-            	if (a != 0 && b != 0)
+            	resultado = dividir(num1, num2);
+            	if (num1 != 0 && num2 != 0)
                 {
                     printf ("La division es: %f\n", resultado);
                 }
-                else if (a == 0 && b != 0)
+                else if (num1 == 0 && num2 != 0)
                 {
                     printf("Usted inreso 0 o nada en el operando A\nLa division es: 0");
                 }
-                else if (a != 0 && b == 0)
+                else if (num1 != 0 && num2 == 0)
                 {
                     printf("No se puede dividir por 0");
                 }
@@ -124,12 +124,12 @@ int main()
                 }
             	break;
         	case 7 :
-            	resultado = factorear (a, b);
-            	if (a > 0)
+            	resultado = factorear (num1, num2);
+            	if (num1 > 0)
                 {
                     printf("El factoreal es: %f\n", resultado);
                 }
-            	else if (a == 0)
+            	else if (num1 == 0)
                 {
                     printf("Usted no ingrenso el operando A o ingreso 0");
                 }
@@ -144,53 +144,53 @@ int main()
 
             	break;
         	case 8 :
-                resultado = sumar (a, b);
+                resultado = sumar (num1, num2);
             	if (resultado != 0)
             	{
             		printf("La suma es: %f\n", resultado);
             	}
             	else
             	{
-            		if (a ==0 && b != 0)
+            		if (num1 ==0 && num2 != 0)
             		{
-            		 printf ("No se realizo la suma ya que solo ingreso B = %f.\n", b);
+            		 printf ("No se realizo la suma ya que solo ingreso B = %f.\n", num2);
             		}
-            		else if (a != 0 && b == 0)
+            		else if (num1 != 0 && num2 == 0)
             		{
-            			printf ("No se realizo la suma ya que solo ingreso A = %f.\n", a);
+            			printf ("No se realizo la suma ya que solo ingreso A = %f.\n", num1);
             		}
-            		else if ( a == 0 && b == 0)
+            		else if ( num1 == 0 && num2 == 0)
             		{
             			printf ("No se realizo la suma ya que  no ingreso un valor.\n");
             		}
             	}
-            	resultado = restar (a, b);
-            	if (a != 0 && b != 0)
+            	resultado = restar (num1, num2);
+            	if (num1 != 0 && num2 != 0)
                 {
                     printf ("La resta es: %f.\n", resultado);
                 }
-                else if (a == 0 && b != 0)
+                else if (num1 == 0 && num2 != 0)
                 {
-                    printf("Usted solo ingreso un operando o 0 en el operando A\nLa resta es: -%f.\n", b);
+                    printf("Usted solo ingreso un operando o 0 en el operando A\nLa resta es: -%f.\n", num2);
                 }
-                else if (a != 0 && b == 0)
+                else if (num1 != 0 && num2 == 0)
                 {
-                    printf("Usted solo ingreso un operando o 0 en el operando B\nLa resta es: %f.\n", a);
+                    printf("Usted solo ingreso un operando o 0 en el operando B\nLa resta es: %f.\n", num1);
                 }
                 else
                 {
                         printf("No se realizo la resta ya que usted no ingreso numeros validos.\n");
                 }
-                resultado = multiplicar (a, b);
-                if (a != 0 && b != 0)
+                resultado = multiplicar (num1, num2);
+                if (num1 != 0 && num2 != 0)
                 {
                     printf("La multiplicacion es: %f.\n", resultado);
                 }
-            	else if (a == 0 && b != 0)
+            	else if (num1 == 0 && num2 != 0)
                 {
                     printf("Usted solo ingreso un operando o 0 en el operando A\nLa multiplicacion es: 0.\n");
                 }
-                else if (a != 0 && b == 0)
+                else if (num1 != 0 && num2 == 0)
                 {
                     printf("Usted solo ingreso un operando o 0 en el operando B\nLa multiplicacion es: 0.\n");
                 }
@@ -198,16 +198,16 @@ int main()
                 {
                         printf("No se realizo la multiplicacion ya que usted no ingreso numeros validos.\n");
                 }
-                resultado = dividir(a, b);
-            	if (a != 0 && b != 0)
+                resultado = dividir(num1, num2);
+            	if (num1 != 0 && num2 != 0)
                 {
                     printf ("La division es: %f.\n", resultado);
                 }
-                else if (a == 0 && b != 0)
+                else if (num1 == 0 && num2 != 0)
                 {
                     printf("Usted inreso 0 o nada en el operando A\nLa division es: 0.\n");
                 }
-                else if (a != 0 && b == 0)
+                else if (num1 != 0 && num2 == 0)
                 {
                     printf("No se puede dividir por 0.\n");
                 }
@@ -215,12 +215,12 @@ int main()
                 {
                     printf("No se realizo la division ya que usted no ingreso numeros validos.\n");
                 }
-                resultado = factorear (a, b);
-            	if (a > 0)
+                resultado = factorear (num1, num2);
+            	if (num1 > 0)
                 {
                     printf("El factorial es: %f.\n", resultado);
                 }
-            	else if (a == 0)
+            	else if (num1 == 0)
                 {
                     printf("Usted no ingrenso el operando A o ingreso 0.\n");
                 }
@@ -230,16 +230,13 @@ int main()
                 }
                 break;
         	case 9 :
-        		printf("Desea seguir ingresando (s/n)?");
-        		fflush(stdin);
-        		scanf("%c",&seguir);
-        		while (seguir != 's' && seguir != 'n')
-                {
-                    printf("\nError. Ingrese una opcion valida ");
-                    scanf ("%c", &seguir);
-                }
+        		printf("Desea cerrar el programa (s/n)?");
+        		//fflush(stdin);
+        		setbuf(stdin, NULL);
+        		seguir = Respuesta (seguir);
         		break;
-    	}
+    	    }
+    	    printf("Presione una tecla para terminar");
      }
     return 0;
 }
