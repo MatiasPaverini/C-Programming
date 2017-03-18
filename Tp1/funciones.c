@@ -4,18 +4,18 @@
 #include "funciones.h"
 
 
-float ingresarNumeros(float x)
+float ingresarNumeros(float numero)
 {
 	int flag = 0;// validacion para que no sea una letra
-	char cad[20];
-	int val;
+	char cadena[20];
+	int valor;
 		while (flag == 0)
 		{
-			scanf("%s", cad);
-			val = isdigit(cad[0]);
-			if (val != 0)
+			scanf("%s", cadena);
+			valor = isdigit(cadena[0]);
+			if (valor != 0)
 			{
-				x = atof(cad);
+				numero = atof(cadena);
 				flag++;
 			}
 			else
@@ -23,100 +23,112 @@ float ingresarNumeros(float x)
 				printf (" Reingrese un valor correcto (Numeros):\n");
 			}
 		}
-	return x;
+	return numero;
 }
 
-float sumar (float x, float y)
+float sumar (float numero1, float numero2)
 {
-	float z;
-	if (x == 0 || y == 0)
+	float resultado;
+	if (numero1 == 0 || numero2 == 0)
 	{
-		z = 0;
+		resultado = 0;
 	}
 	else
 	{
-		z = x + y;
+		resultado = numero1 + numero2;
 	}
-	return z;
+	return resultado;
 }
 
-float restar(float x, float y)
+float restar(float numero1, float numero2)
 {
-	float z;
-	if (x == 0 || y == 0)
+	float resultado;
+	if (numero1 == 0 || numero2 == 0)
 	{
-		if (y == 0)
+		if (numero2 == 0)
         {
-            z = x;
+            resultado = numero1;
         }
         else
         {
-            z = y;
+             resultado = numero2;
         }
 	}
 	else
     {
-        z = x - y;
+        resultado = numero1 - numero2;
     }
-	return z;
+	return resultado;
 }
 
 
-float multiplicar(float x, float y)
+float multiplicar(float numero1, float numero2)
 {
-	float z;
-	if (x == 0 || y == 0)
+	float resultado;
+	if (numero1 == 0 || numero2 == 0)
 	{
-		z = 0;
+		resultado = 0;
 	}
 	else
     {
-	z = x * y;
+	resultado = numero1 * numero2;
     }
-	return z;
+	return resultado;
 }
 
-float dividir(float x, float y)
+float dividir(float numero1, float numero2)
 {
-    float z;
-		 if ( y != 0 )
+    float resultado;
+		 if ( numero2 != 0 )
          {
-            z = x / y;
-            return z;
+            resultado = numero1 / numero2;
+            return resultado;
          }
         else
-            {
-                z = 0;
-                return z;
-            }
+        {
+                resultado = 0;
+                return resultado;
+        }
 }
 
 
-float factorear(float x, float y)
+float factorear(float numero1, float numero2)
 {
-    int z;
-    z = x;
-	if (x > 0 && x - z == 0)
+    int resultado;
+    resultado = numero1;
+	if (numero1 > 0 && numero1 - resultado == 0)
     {
-        y = z - 1;
+        numero2 = resultado - 1;
         do
         {
-            z = z * y;
-            y--;
+            resultado = resultado * numero2;
+            numero2--;
         }
-        while (y > 0);
+        while (numero2 > 0);
     }
-    else if ( x > 0 && x - z != 0)
+    else if ( numero1 > 0 && numero1 - resultado != 0)
     {
-        z = -1;
+        resultado = -1;
     }
-    else if (x == 0)
+    else if (numero1 == 0)
 	{
-		z = 1;
+		resultado = 1;
 	}
 	else
 	{
-	    z = 0;
+	    resultado = 0;
 	}
-	return z;
+	return resultado;
+}
+
+char Respuesta (char decision)
+{
+   getchar();
+   scanf("%c", &decision);
+  /* while (decision != 's' && decision != 'n')
+   {
+      printf("\nError.  Ingrese una opcion valida ");
+      scanf ("%c", &decision);
+    }*/
+    return decision;
 }
