@@ -123,12 +123,36 @@ float factorear(float numero1, float numero2)
 
 char Respuesta (char decision)
 {
-   getchar();
-   scanf("%c", &decision);
-  /* while (decision != 's' && decision != 'n')
+   //getchar();
+   decision = getc(stdin);
+ //  decision = tolower(decision);
+   while (decision != 's' &&  decision != 'n')
    {
-      printf("\nError.  Ingrese una opcion valida ");
-      scanf ("%c", &decision);
-    }*/
+       getchar();
+       printf("\nError.  Ingrese una opcion valida:  ");
+      decision = getc(stdin);
+    }
     return decision;
 }
+
+int SeleccionarOpcion(int numero)
+{
+  int flag = 0;// validacion para que no sea una letra
+	char cadena[20];
+	int valor;
+		while (flag == 0)
+		{
+			scanf("%s", cadena);
+			valor = isdigit(cadena[0]);
+			if (valor != 0)
+			{
+				numero = atof(cadena);
+				flag++;
+			}
+			else
+			{
+				printf (" Reingrese una opcion correcta.:\n");
+			}
+		}
+	return numero;
+	}
