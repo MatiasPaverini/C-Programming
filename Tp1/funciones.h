@@ -54,6 +54,10 @@ En caso de ser un numero valido entonces lo pasa a float.
 float ingresarNumeros (float x);
 /** \brief SeleccionarOpcion - esta funcion evalua el ingreso para las opciones de la calculadora, evaluando que se hayan ingresado numeros y no letras.
 *
-* \param numero - El parametro recibido por la funcion desde el main, 
+* \param numero - El parametro recibido por la funcion desde el main,
 **/
+int SeleccionarOpcion(int numero);
+/**
+**/
+char Respuesta (char decision);
 #endif

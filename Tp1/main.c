@@ -7,7 +7,7 @@ int main()
     float num1 = 0, num2 = 0, resultado;
     int opcion, flag = 0;
     char seguir = 'n';
-     while (seguir != 's')
+     while (seguir == 'n')
      {
          if (flag != 0)
          {
@@ -32,9 +32,10 @@ int main()
             flag++;
          }
        scanf("%d", &opcion);
+       //opcion = SeleccionarOpcion(opcion);
     	switch(opcion)
     	{
-    	  opcion = SeleccionarOpcion(opcion);
+
         	case 1 :
 				 printf ("Ingrese un numero para el primer operando (A):  \n");
 				num1 = ingresarNumeros (num1);
@@ -231,16 +232,17 @@ int main()
                 }
                 break;
         	case 9 :
-        		printf("Desea cerrar el programa (s/n)?");
-        		//fflush(stdin);
-        		getchar();
-        		seguir = Respuesta (seguir);
+
+        	    fflush(stdin);
+        		printf("Desea cerrar el programa (s/n)? ");
+        		seguir = getc(stdin);
+        		flag = 0;
         		break;
-        		case default:
+        		default:
         		  printf("La opcion ingresada no existe, ingrese una nueva opcion");
         		  getchar();
         		  opcion = SeleccionarOpcion(opcion);
-    	    } printf("1");
+    	    }
      }
     return 0;
 }

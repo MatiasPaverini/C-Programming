@@ -123,15 +123,14 @@ float factorear(float numero1, float numero2)
 
 char Respuesta (char decision)
 {
-   //getchar();
    decision = getc(stdin);
- //  decision = tolower(decision);
-   while (decision != 's' &&  decision != 'n')
+   //decision = tolower(decision);
+   /*while (decision != 's' &&  decision != 'n')
    {
-       getchar();
-       printf("\nError.  Ingrese una opcion valida:  ");
-      decision = getc(stdin);
-    }
+      getchar();
+      printf("\nError.  Ingrese una opcion valida:  ");
+      decision = getchar();
+    }*/
     return decision;
 }
 
