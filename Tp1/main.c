@@ -1,4 +1,4 @@
-#include <stdio.h>
+ #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
 #include "funciones.h"
@@ -31,9 +31,10 @@ int main()
             printf("Ingrese un numero para ejecutar una funcion\n1 Ingresar primer operando (A).\n2 Ingresar segundo operando (B).\n3 Sumar.\n4 Restar.\n5 Multiplicar.\n6 Division.\n7 Factoreal.\n8 Hacer todas las operaciones.\n9 Salir.\n");
             flag++;
          }
-        scanf("%d", &opcion);
+       scanf("%d", &opcion);
     	switch(opcion)
     	{
+    	  opcion = SeleccionarOpcion(opcion);
         	case 1 :
 				 printf ("Ingrese un numero para el primer operando (A):  \n");
 				num1 = ingresarNumeros (num1);
@@ -232,11 +233,14 @@ int main()
         	case 9 :
         		printf("Desea cerrar el programa (s/n)?");
         		//fflush(stdin);
-        		setbuf(stdin, NULL);
+        		getchar();
         		seguir = Respuesta (seguir);
         		break;
-    	    }
-    	    printf("Presione una tecla para terminar");
+        		case default:
+        		  printf("La opcion ingresada no existe, ingrese una nueva opcion");
+        		  getchar();
+        		  opcion = SeleccionarOpcion(opcion);
+    	    } printf("1");
      }
     return 0;
 }
