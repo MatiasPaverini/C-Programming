@@ -13,26 +13,60 @@ int main()
          {
              if ( flag == 1 && opcion == 1)
              {
-                 printf("Ingrese un numero para ejecutar una funcion\n1 Ingresar primer operando (A = %f).\n2 Ingresar segundo operando (B).\n3 Sumar.\n4 Restar.\n5 Multiplicar.\n6 Division.\n7 Factoreal.\n8 Hacer todas las operaciones.\n9 Salir.\n", num1);
+                 printf("Ingrese un numero para ejecutar una funcion\n");
+                 printf("1 Ingresar primer operando (A = %f).\n", num1);
+                 printf("2 Ingresar segundo operando (B).\n");
+                 printf("3 Sumar.\n4 Restar.\n");
+                 printf("5 Multiplicar.\n");
+                 printf("6 Division.\n");
+                 printf("7 Factoreal.\n");
+                 printf("8 Hacer todas las operaciones.\n");
+                 printf("9 Salir.\n");
                  flag++;
              }
                 else if ( flag == 1 && opcion == 2)
              {
-                 printf("Ingrese un numero para ejecutar una funcion\n1 Ingresar primer operando (A) .\n2 Ingresar segundo operando (B = %f).\n3 Sumar.\n4 Restar.\n5 Multiplicar.\n6 Division.\n7 Factoreal.\n8 Hacer todas las operaciones.\n9 Salir.\n", num2);
+                 printf("Ingrese un numero para ejecutar una funcion\n");
+                 printf("1 Ingresar primer operando (A) .\n");
+                 printf("2 Ingresar segundo operando (B = %f).\n", num2);
+                 printf("3 Sumar.\n");
+                 printf("4 Restar.\n");
+                 printf("5 Multiplicar.\n");
+                 printf("6 Division.\n");
+                 printf("7 Factoreal.\n");
+                 printf("8 Hacer todas las operaciones.\n");
+                 printf("9 Salir.\n");
                  flag++;
              }
                 else if (flag == 2)
              {
-                 printf("Ingrese un numero para ejecutar una funcion\n1 Ingresar primer operando (A = %f) .\n2 Ingresar segundo operando (B = %f).\n3 Sumar.\n4 Restar.\n5 Multiplicar.\n6 Division.\n7 Factoreal.\n8 Hacer todas las operaciones.\n9 Salir.\n", num1, num2);
+                 printf("Ingrese un numero para ejecutar una funcion\n");
+                 printf("1 Ingresar primer operando (A = %f) .\n", num1);
+                 printf("2 Ingresar segundo operando (B = %f).\n", num2);
+                 printf("3 Sumar.\n");
+                 printf("4 Restar.\n");
+                 printf("5 Multiplicar.\n");
+                 printf("6 Division.\n");
+                 printf("7 Factoreal.\n");
+                 printf("8 Hacer todas las operaciones.\n");
+                 printf("9 Salir.\n");
              }
          }
          else
          {
-            printf("Ingrese un numero para ejecutar una funcion\n1 Ingresar primer operando (A).\n2 Ingresar segundo operando (B).\n3 Sumar.\n4 Restar.\n5 Multiplicar.\n6 Division.\n7 Factoreal.\n8 Hacer todas las operaciones.\n9 Salir.\n");
+            printf("Ingrese un numero para ejecutar una funcion\n");
+            printf("1 Ingresar primer operando (A).\n");
+            printf("2 Ingresar segundo operando (B).\n");
+            printf("3 Sumar.\n");
+            printf("4 Restar.\n");
+            printf("5 Multiplicar.\n");
+            printf("6 Division.\n");
+            printf("7 Factoreal.\n");
+            printf("8 Hacer todas las operaciones.\n");
+            printf("9 Salir.\n");
             flag++;
          }
        scanf("%d", &opcion);
-       //opcion = SeleccionarOpcion(opcion);
     	switch(opcion)
     	{
 
@@ -233,12 +267,12 @@ int main()
                 break;
         	case 9 :
 
-        	    fflush(stdin);
+                getchar();
         		printf("Desea cerrar el programa (s/n)? ");
         		seguir = getc(stdin);
         		flag = 0;
         		break;
-        		default:
+            default:
         		  printf("La opcion ingresada no existe, ingrese una nueva opcion");
         		  getchar();
         		  opcion = SeleccionarOpcion(opcion);

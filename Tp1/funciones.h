@@ -59,5 +59,5 @@ float ingresarNumeros (float x);
 int SeleccionarOpcion(int numero);
 /**
 **/
-char Respuesta (char decision);
+char ValidarCierre (char decision);
 #endif

@@ -121,17 +121,9 @@ float factorear(float numero1, float numero2)
 	return resultado;
 }
 
-char Respuesta (char decision)
+char ValidarCierre (char decision)
 {
-   decision = getc(stdin);
-   //decision = tolower(decision);
-   /*while (decision != 's' &&  decision != 'n')
-   {
-      getchar();
-      printf("\nError.  Ingrese una opcion valida:  ");
-      decision = getchar();
-    }*/
-    return decision;
+
 }
 
 int SeleccionarOpcion(int numero)
