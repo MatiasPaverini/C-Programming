@@ -9,26 +9,23 @@ int main()
     char seguir = 'n';
      while (seguir == 'n')
      {
-         if (flag != 0)
-         {
-             if ( flag == 1 && opcion == 1)
-             {
-                 printf("Ingrese un numero para ejecutar una funcion\n");
-                 printf("1 Ingresar primer operando (A = %f).\n", num1);
-                 printf("2 Ingresar segundo operando (B).\n");
-                 printf("3 Sumar.\n4 Restar.\n");
-                 printf("5 Multiplicar.\n");
-                 printf("6 Division.\n");
-                 printf("7 Factoreal.\n");
-                 printf("8 Hacer todas las operaciones.\n");
-                 printf("9 Salir.\n");
-                 flag++;
-             }
-                else if ( flag == 1 && opcion == 2)
-             {
-                 printf("Ingrese un numero para ejecutar una funcion\n");
-                 printf("1 Ingresar primer operando (A) .\n");
-                 printf("2 Ingresar segundo operando (B = %f).\n", num2);
+       printf("Ingrese un numero para ejecutar una funcion\n");
+                 if (num1 != 0)
+                 {
+                   printf("1 Ingresar primer operando (A = %.2f).\n", num1);
+                 }
+                 else
+                 {
+                   printf("1 Ingresar primer operando (A).\n");
+                 }
+                 if (num2 != 0)
+                 {
+                   printf("2 Ingresar segundo operando (B = %.2f).\n", num2);
+                 }
+                 else
+                 {
+                   printf("2 Ingresar segundo operando (B).\n");
+                 }
                  printf("3 Sumar.\n");
                  printf("4 Restar.\n");
                  printf("5 Multiplicar.\n");
@@ -36,36 +33,6 @@ int main()
                  printf("7 Factoreal.\n");
                  printf("8 Hacer todas las operaciones.\n");
                  printf("9 Salir.\n");
-                 flag++;
-             }
-                else if (flag == 2)
-             {
-                 printf("Ingrese un numero para ejecutar una funcion\n");
-                 printf("1 Ingresar primer operando (A = %f) .\n", num1);
-                 printf("2 Ingresar segundo operando (B = %f).\n", num2);
-                 printf("3 Sumar.\n");
-                 printf("4 Restar.\n");
-                 printf("5 Multiplicar.\n");
-                 printf("6 Division.\n");
-                 printf("7 Factoreal.\n");
-                 printf("8 Hacer todas las operaciones.\n");
-                 printf("9 Salir.\n");
-             }
-         }
-         else
-         {
-            printf("Ingrese un numero para ejecutar una funcion\n");
-            printf("1 Ingresar primer operando (A).\n");
-            printf("2 Ingresar segundo operando (B).\n");
-            printf("3 Sumar.\n");
-            printf("4 Restar.\n");
-            printf("5 Multiplicar.\n");
-            printf("6 Division.\n");
-            printf("7 Factoreal.\n");
-            printf("8 Hacer todas las operaciones.\n");
-            printf("9 Salir.\n");
-            flag++;
-         }
        scanf("%d", &opcion);
     	switch(opcion)
     	{
@@ -73,12 +40,12 @@ int main()
         	case 1 :
 				 printf ("Ingrese un numero para el primer operando (A):  \n");
 				num1 = ingresarNumeros (num1);
-				printf("El operando A es: %f\n", num1);
+				printf("El operando A es: %.2f\n", num1);
          	   break;
         	case 2 :
 				 printf ("Ingrese un numero para el segundo operando (B):  \n");
 				num2 = ingresarNumeros(num2);
-				printf ("El operando B es: %f\n", num2);
+				printf ("El operando B es: %.2f\n", num2);
             	break;
         	case 3 :
         	    resultado = sumar (num1, num2);
@@ -270,7 +237,7 @@ int main()
                 getchar();
         		printf("Desea cerrar el programa (s/n)? ");
         		seguir = getc(stdin);
-        		flag = 0;
+        		flag = 3;
         		break;
             default:
         		  printf("La opcion ingresada no existe, ingrese una nueva opcion");
