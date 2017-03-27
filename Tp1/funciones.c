@@ -121,11 +121,6 @@ float factorear(float numero1, float numero2)
 	return resultado;
 }
 
-char ValidarCierre (char decision)
-{
-
-}
-
 int SeleccionarOpcion(int numero)
 {
   int flag = 0;// validacion para que no sea una letra
@@ -142,7 +137,7 @@ int SeleccionarOpcion(int numero)
 			}
 			else
 			{
-				printf (" Reingrese una opcion correcta.:\n");
+				printf (" Reingrese una opcion correcta:\n");
 			}
 		}
 	return numero;
