@@ -1,0 +1,75 @@
+# depslib dependency file v1.0
+1474433050 source:/home/matias/Documents/Git/tps en progreso/Tp2/funciones.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<ctype.h>
+	"funciones.h"
+
+1474429985 /home/matias/Documents/Git/tps en progreso/Tp2/funciones.h
+
+1474428759 source:/home/matias/Documents/Git/tps en progreso/Tp2/main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1492470922 source:c:\users\alumno\desktop\tp2\funciones.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<ctype.h>
+	"funciones.h"
+
+1492470441 c:\users\alumno\desktop\tp2\funciones.h
+
+1492470441 source:c:\users\alumno\desktop\tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"funciones.h"
+
+1493268036 source:c:\users\matia\documents\utn\tp-s-en-progreso\tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"funciones.h"
+
+1493270853 c:\users\matia\documents\utn\tp-s-en-progreso\tp2\funciones.h
+
+1493270401 source:c:\users\matia\documents\utn\tp-s-en-progreso\tp2\funciones.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<ctype.h>
+	"funciones.h"
+
+1493421936 source:c:\users\alumno\desktop\tp-s-en-progreso-master\tp2\funciones.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<ctype.h>
+	"funciones.h"
+
+1493420248 c:\users\alumno\desktop\tp-s-en-progreso-master\tp2\funciones.h
+
+1493420825 source:c:\users\alumno\desktop\tp-s-en-progreso-master\tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"funciones.h"
+
+1493426964 source:d:\tp-s-en-progreso-master\tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"funciones.h"
+
+1493427841 d:\tp-s-en-progreso-master\tp2\funciones.h
+
+1493425814 source:d:\tp-s-en-progreso-master\tp2\funciones.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<ctype.h>
+	"funciones.h"
+

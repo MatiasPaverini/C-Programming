@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1496628751 source:c:\users\elmat\desktop\tp-s-en-progreso\tp3\lib.c
+	"lib.h"
+
+1496628731 c:\users\elmat\desktop\tp-s-en-progreso\tp3\lib.h
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+
+1496620737 source:c:\users\elmat\desktop\tp-s-en-progreso\tp3\main.c
+	"lib.h"
+
